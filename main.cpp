@@ -1,13 +1,7 @@
-//
-//  main.cpp
-//  Proj4
-//
 //  Created by Manohar Boppana on 12/5/18.
 //  Copyright © 2018 Manohar Boppana. All rights reserved.
 
-//For Linux and Windows, use the following header instead of the above:
 #include <GL/glut.h>
-
 #include <iostream>
 #include <fstream>
 #include <vector>
