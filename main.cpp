@@ -1,7 +1,10 @@
 //  Created by Manohar Boppana on 12/5/18.
 //  Copyright © 2018 Manohar Boppana. All rights reserved.
 
-#include <GL/glut.h>
+#define GL_SILENCE_DEPRECATION //Defined to avoid deprication messages
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#include <GLUT/glut.h> 
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -246,7 +249,7 @@ void modifyPoint(vector<Point> &points)
 //deCasteljau algorithm for Bezier curves
 void deCasteljau(float t, vector<Point> &v, vector<Point> points)
 {
-    vector<vector<Point>> vecJ;
+    vector<vector<Point> > vecJ;
     vector<Point> vecI;
     Point p;
     
@@ -401,7 +404,7 @@ void deBoor(float U, vector<Point> &v, Spline s)
 {
     int domLow = 0, domHigh = 0, divs= 0, ulowInt= 0, uHighInt= 0;
     float uInterval= 0.0;
-    vector<vector<Point>> vecJ;
+    vector<vector<Point> > vecJ;
     vector<Point> vecI;
     vector<float> u;
     Point p;
@@ -512,14 +515,14 @@ void idle()
     else
         exit(0);
     
-    Write("write_file");
+    Write("write_file.txt");
     
     glutPostRedisplay();
 }
 
 int main(int argc, char *argv[])
 {
-    Read("read_file");
+    Read("read_file.txt");
     
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA );
@@ -536,7 +539,7 @@ int main(int argc, char *argv[])
     //handles input
     glutIdleFunc(idle);
     
-    Write("write_file");
+    Write("write_file.txt");
     glutMainLoop();//main display loop, will display until terminate
     return 1;
 }
