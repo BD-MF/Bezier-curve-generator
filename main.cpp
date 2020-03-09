@@ -515,14 +515,14 @@ void idle()
     else
         exit(0);
     
-    Write("write_file.txt");
+    Write("/Users/manoharboppana/Desktop/Bezier-curve-generator/write_file.txt"); //write file path
     
     glutPostRedisplay();
 }
 
 int main(int argc, char *argv[])
 {
-    Read("read_file.txt");
+    Read("/Users/manoharboppana/Desktop/Bezier-curve-generator/read_file.txt"); //read file path
     
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA );
@@ -539,7 +539,7 @@ int main(int argc, char *argv[])
     //handles input
     glutIdleFunc(idle);
     
-    Write("write_file.txt");
+    Write("/Users/manoharboppana/Desktop/Bezier-curve-generator/write_file.txt"); //write file path
     glutMainLoop();//main display loop, will display until terminate
     return 1;
 }
